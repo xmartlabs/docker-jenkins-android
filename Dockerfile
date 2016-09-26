@@ -26,4 +26,6 @@ RUN chown -R jenkins:jenkins /opt/android-sdk-linux
 
 COPY licenses android-sdk-linux/licenses
 
+RUN echo y | android update sdk --no-ui -a --filter extra-google-google_play_services,extra-google-m2repository,extra-android-m2repository
+
 USER jenkins
