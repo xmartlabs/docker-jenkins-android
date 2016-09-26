@@ -22,4 +22,8 @@ WORKDIR /opt
 
 RUN curl http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz | tar -xz
 
+RUN chown -R jenkins:jenkins /opt/android-sdk-linux
+
+COPY licenses android-sdk-linux/licenses
+
 USER jenkins
