@@ -29,4 +29,4 @@ RUN chown -R jenkins:jenkins /opt/android-sdk-linux
 USER jenkins
 
 # The following SDK packages are needed; the rest are dynamically installed since Android Gradle plugin 2.2
-RUN echo y | android update sdk --no-ui -a --filter extra-google-google_play_services,extra-google-m2repository,extra-android-m2repository
+RUN echo y | android update sdk --no-ui -a --filter extra-android-m2repository,extra-google-google_play_services,extra-google-m2repository,platform-tools
