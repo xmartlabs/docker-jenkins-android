@@ -22,10 +22,11 @@ WORKDIR /opt
 
 RUN curl http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz | tar -xz
 
-RUN chown -R jenkins:jenkins /opt/android-sdk-linux
-
 COPY licenses android-sdk-linux/licenses
 
-RUN echo y | android update sdk --no-ui -a --filter extra-google-google_play_services,extra-google-m2repository,extra-android-m2repository
+RUN chown -R jenkins:jenkins /opt/android-sdk-linux
 
 USER jenkins
+
+# The following SDK packages are needed; the rest are dynamically installed since Android Gradle plugin 2.2
+RUN echo y | android update sdk --no-ui -a --filter extra-google-google_play_services,extra-google-m2repository,extra-android-m2repository
