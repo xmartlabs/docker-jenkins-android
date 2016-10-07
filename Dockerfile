@@ -30,3 +30,5 @@ USER jenkins
 
 # The following SDK packages are needed; the rest are dynamically installed since Android Gradle plugin 2.2
 RUN echo y | android update sdk --no-ui -a --filter extra-android-m2repository,extra-google-google_play_services,extra-google-m2repository,platform-tools
+
+ENV ANDROID_EMULATOR_FORCE_32BIT true
