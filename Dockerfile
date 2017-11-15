@@ -1,4 +1,4 @@
-FROM jenkins:lts
+FROM jenkins:jenkins
 
 MAINTAINER santiago
 
