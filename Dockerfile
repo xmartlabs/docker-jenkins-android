@@ -1,6 +1,6 @@
 FROM xmartlabs/android AS android
 
-FROM jenkins/jenkins
+FROM jenkins/jenkins:lts
 ENV ANDROID_HOME /opt/android-sdk-linux
 COPY --from=android ${ANDROID_HOME} ${ANDROID_HOME}
 COPY --from=android /usr/lib/jvm/java-8-oracle /usr/lib/jvm/java-8-oracle
